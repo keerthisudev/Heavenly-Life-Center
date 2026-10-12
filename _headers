@@ -1,0 +1,13 @@
+/*
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; upgrade-insecure-requests; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https://rjknrmkgfzdlakxqmsma.supabase.co https://images.unsplash.com https://encrypted-tbn0.gstatic.com; connect-src 'self' https://rjknrmkgfzdlakxqmsma.supabase.co wss://rjknrmkgfzdlakxqmsma.supabase.co; frame-src https://www.youtube.com https://www.google.com; worker-src 'self'; manifest-src 'self'
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: DENY
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Strict-Transport-Security: max-age=31536000
+
+/admin.html
+  Cache-Control: no-store
+
+/admin.js
+  Cache-Control: no-store

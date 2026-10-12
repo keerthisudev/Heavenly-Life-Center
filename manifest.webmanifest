@@ -1,0 +1,32 @@
+{
+  "name": "Heavenly Life Center",
+  "short_name": "Heavenly Life",
+  "description": "Worship, prayer, fellowship and upcoming events at Heavenly Life Center.",
+  "lang": "en",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fbf8f3",
+  "theme_color": "#642b24",
+  "icons": [
+    {
+      "src": "assets/logo.jpg",
+      "sizes": "4724x4724",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Admin dashboard",
+      "url": "admin.html",
+      "icons": [
+        {
+          "src": "assets/logo.jpg",
+          "sizes": "4724x4724",
+          "type": "image/jpeg"
+        }
+      ]
+    }
+  ]
+}

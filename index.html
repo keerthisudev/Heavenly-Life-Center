@@ -1,0 +1,2908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Heavenly Life Center</title>
+
+<meta name="description"
+content="Heavenly Life Center - Worship, Prayer, Fellowship and Growing in Christ.">
+<meta name="theme-color" content="#642b24">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; upgrade-insecure-requests; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https://rjknrmkgfzdlakxqmsma.supabase.co https://images.unsplash.com https://encrypted-tbn0.gstatic.com; connect-src 'self' https://rjknrmkgfzdlakxqmsma.supabase.co wss://rjknrmkgfzdlakxqmsma.supabase.co; frame-src https://www.youtube.com https://www.google.com; worker-src 'self'; manifest-src 'self'">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+<link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+<link rel="apple-touch-icon" href="assets/logo.jpg">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Noto+Sans+Malayalam:wght@400;500;600;700&display=swap"
+rel="stylesheet">
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+    scroll-padding-top:80px;
+}
+
+body{
+    font-family:"DM Sans","Noto Sans Malayalam",sans-serif;
+    background:#fbf8f3;
+    color:#241b19;
+    line-height:1.6;
+    overflow-x:hidden;
+    padding-bottom:0;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button,
+input,
+textarea{
+    font:inherit;
+}
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+:root{
+    --cream:#fbf8f3;
+    --white:#ffffff;
+    --cream-dark:#f3ece3;
+
+    --brown:#642b24;
+    --brown-dark:#2d110e;
+    --brown-light:#8d3e31;
+
+    --gold:#d2a54e;
+    --gold-light:#f3dfad;
+
+    --text:#241b19;
+    --muted:#70635d;
+
+    --border:#e7ddd1;
+
+    --green:#1f9d63;
+    --teal:#247f79;
+    --coral:#d87560;
+    --lavender:#7464a8;
+    --sky:#4d8da6;
+
+    --shadow:0 15px 45px rgba(61,35,25,.10);
+}
+
+/* =====================================================
+   COMMON
+===================================================== */
+
+.container{
+    width:min(1160px, calc(100% - 40px));
+    margin:auto;
+}
+
+.section{
+    padding:90px 0;
+}
+
+.section-light{
+    background:linear-gradient(145deg,#f0f8f5,#f8f5ff 58%,#fff9ef);
+}
+
+.eyebrow{
+    color:var(--gold);
+    font-size:13px;
+    font-weight:800;
+    letter-spacing:2.5px;
+    text-transform:uppercase;
+    margin-bottom:14px;
+}
+
+.heading{
+    margin-bottom:45px;
+}
+
+.heading h2{
+    font-size:42px;
+    line-height:1.15;
+    margin-bottom:12px;
+    color:var(--brown-dark);
+}
+
+.heading p{
+    color:var(--muted);
+    max-width:650px;
+}
+
+.card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:22px;
+    box-shadow:0 10px 35px rgba(69,38,25,.05);
+}
+
+/* =====================================================
+   LANGUAGE
+===================================================== */
+
+.ml{
+    display:none;
+}
+
+body.malayalam .en{
+    display:none;
+}
+
+body.malayalam .ml{
+    display:inline;
+}
+
+/* =====================================================
+   TOP BAR
+===================================================== */
+
+.topbar{
+    background:var(--brown-dark);
+    color:#fff;
+    font-size:13px;
+    padding:8px 0;
+}
+
+.topbar-content{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+}
+
+.topbar a{
+    color:#fff;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,250,242,.97);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--border);
+}
+
+.nav{
+    height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    position:relative;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo-icon{
+    width:48px;
+    height:48px;
+    display:block;
+    object-fit:contain;
+    border-radius:14px;
+    background:transparent;
+    box-shadow:0 8px 22px rgba(100,43,36,.12);
+}
+
+.logo-text{
+    font-weight:800;
+    font-size:18px;
+    color:var(--brown);
+}
+
+.logo-text small{
+    display:block;
+    color:var(--muted);
+    font-size:9px;
+    letter-spacing:2px;
+}
+
+.navlinks{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.navlinks a{
+    color:#403531;
+    font-size:14px;
+    font-weight:600;
+    position:relative;
+}
+
+.navlinks a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:-8px;
+    height:2px;
+    border-radius:5px;
+    background:var(--gold);
+    transform:scaleX(0);
+    transition:.2s;
+}
+
+.navlinks a:hover::after{
+    transform:scaleX(1);
+}
+
+.lang{
+    border:1px solid var(--border);
+    padding:8px 13px;
+    border-radius:30px;
+    cursor:pointer;
+    background:white;
+}
+
+.hamb{
+    display:none;
+    width:44px;
+    height:44px;
+    border:1px solid var(--border);
+    background:#fff;
+    border-radius:12px;
+    font-size:23px;
+    cursor:pointer;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    position:relative;
+    min-height:680px;
+    display:flex;
+    align-items:center;
+
+    background:
+    radial-gradient(
+        circle at 85% 20%,
+        rgba(255,221,145,.3),
+        transparent 28%
+    ),
+    radial-gradient(circle at 12% 88%,rgba(83,179,168,.23),transparent 30%),
+    linear-gradient(
+        125deg,
+        #29110e,
+        #54243f 38%,
+        #315f68 75%,
+        #8e5137
+    );
+
+    color:#fff;
+    overflow:hidden;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background-image:
+    radial-gradient(
+        rgba(255,255,255,.13) 1px,
+        transparent 1px
+    );
+
+    background-size:22px 22px;
+    opacity:.2;
+}
+
+.hero-grid{
+    position:relative;
+    z-index:1;
+
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:55px;
+    align-items:center;
+}
+
+.hero h1{
+    font-size:64px;
+    line-height:1.05;
+    letter-spacing:-2px;
+    margin-bottom:22px;
+}
+
+.hero p{
+    font-size:18px;
+    line-height:1.8;
+    max-width:620px;
+    color:#f5e9e2;
+}
+
+.actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:30px;
+}
+
+.btn{
+    min-height:48px;
+    padding:12px 20px;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:13px;
+
+    font-weight:700;
+    border:1px solid transparent;
+
+    transition:.2s;
+    cursor:pointer;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+.primary{
+    color:#32150f;
+    background:linear-gradient(135deg,#e2bb63,#c9973e);
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.ghost{
+    color:#fff;
+    border-color:rgba(255,255,255,.35);
+    background:rgba(255,255,255,.08);
+}
+
+.hero-art{
+    padding:12px;
+    border-radius:32px;
+    background:rgba(255,255,255,.10);
+    box-shadow:0 30px 70px rgba(0,0,0,.22);
+}
+
+.hero-art img{
+    width:100%;
+    aspect-ratio:3 / 2;
+    object-fit:cover;
+    display:block;
+    border-radius:22px;
+}
+
+/* =====================================================
+   QUICK INFO
+===================================================== */
+
+.visit-strip{
+    background:linear-gradient(90deg,#fff4e2,#f0fbf8 35%,#f4f0ff 68%,#fff0ed);
+    border-top:1px solid #eadcc8;
+    border-bottom:1px solid #eadcc8;
+}
+
+.visit-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+}
+
+.visit-item{
+    text-align:center;
+    padding:20px 15px;
+    border-right:1px solid rgba(100,43,36,.12);
+}
+
+.visit-item:last-child{
+    border-right:none;
+}
+
+.visit-item strong{
+    display:block;
+    color:var(--brown);
+    font-size:14px;
+}
+
+.visit-item span{
+    display:block;
+    color:var(--muted);
+    font-size:12px;
+}
+
+/* =====================================================
+   WELCOME
+===================================================== */
+
+.welcome-grid{
+    display:grid;
+    grid-template-columns:.9fr 1.1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.welcome-image{
+    overflow:hidden;
+    border-radius:25px;
+    box-shadow:var(--shadow);
+}
+
+.welcome-image img{
+    width:100%;
+    height:450px;
+    object-fit:cover;
+}
+
+.welcome-text h2{
+    font-size:42px;
+    color:var(--brown-dark);
+    line-height:1.2;
+    margin-bottom:20px;
+}
+
+.welcome-text p{
+    color:var(--muted);
+    margin-bottom:15px;
+}
+
+/* =====================================================
+   WORSHIP
+===================================================== */
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.service{
+    padding:26px;
+    transition:.25s;
+    border-top:4px solid var(--teal);
+}
+
+.service:nth-child(6n + 2){
+    border-top-color:var(--coral);
+}
+
+.service:nth-child(6n + 3){
+    border-top-color:var(--lavender);
+}
+
+.service:nth-child(6n + 4){
+    border-top-color:var(--sky);
+}
+
+.service:nth-child(6n + 5){
+    border-top-color:var(--green);
+}
+
+.service:nth-child(6n){
+    border-top-color:var(--gold);
+}
+
+.service:hover{
+    transform:translateY(-6px);
+    box-shadow:var(--shadow);
+}
+
+.icon{
+    width:52px;
+    height:52px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:15px;
+
+    background:linear-gradient(
+        145deg,
+        #f7e8c6,
+        #ead6aa
+    );
+
+    font-size:23px;
+    margin-bottom:18px;
+}
+
+.service:nth-child(6n + 1) .icon{
+    background:linear-gradient(145deg,#e4f5ef,#c2e8db);
+}
+
+.service:nth-child(6n + 2) .icon{
+    background:linear-gradient(145deg,#fff0e8,#f5c9ba);
+}
+
+.service:nth-child(6n + 3) .icon{
+    background:linear-gradient(145deg,#f0edff,#d8d0f3);
+}
+
+.service:nth-child(6n + 4) .icon{
+    background:linear-gradient(145deg,#e8f5fa,#c7e5ef);
+}
+
+.service:nth-child(6n + 5) .icon{
+    background:linear-gradient(145deg,#eff7df,#dce9b8);
+}
+
+.service:nth-child(6n) .icon{
+    background:linear-gradient(145deg,#fff5d9,#f1dda2);
+}
+
+.service h3{
+    margin-bottom:8px;
+    color:var(--brown);
+}
+
+.service p{
+    color:var(--muted);
+    font-size:14px;
+}
+
+.time{
+    margin-top:12px;
+    color:var(--brown-light);
+    font-weight:700;
+}
+
+/* =====================================================
+   BELIEFS
+===================================================== */
+
+.beliefs-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.belief{
+    padding:25px;
+    background:linear-gradient(135deg,#fff,#f0f8f5);
+}
+
+.belief:nth-child(even){
+    background:linear-gradient(135deg,#fff,#f4f0ff);
+}
+
+.belief h3{
+    color:var(--brown);
+    margin-bottom:8px;
+}
+
+.belief p{
+    color:var(--muted);
+}
+
+.quote-box{
+    grid-column:1 / -1;
+    background:linear-gradient(120deg,#fff2db,#f1eaff 58%,#e7f7f1);
+    border-left:4px solid var(--coral);
+    padding:28px 30px;
+}
+
+.quote-box h3{
+    margin-bottom:16px;
+}
+
+.quote-stack{
+    display:grid;
+    gap:14px;
+}
+
+.quote-box blockquote{
+    margin:0;
+    padding:18px 20px 18px 24px;
+    background:rgba(255,255,255,.6);
+    border-left:3px solid rgba(164,124,65,.75);
+    color:var(--brown-dark);
+    font-size:15px;
+    line-height:1.7;
+    font-style:italic;
+}
+
+/* =====================================================
+   MINISTRIES
+===================================================== */
+
+.ministry-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.ministry{
+    overflow:hidden;
+}
+
+.ministry img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.ministry-content{
+    padding:20px;
+}
+
+.ministry h3{
+    color:var(--brown);
+    margin-bottom:7px;
+}
+
+.ministry p{
+    color:var(--muted);
+    font-size:14px;
+}
+
+/* =====================================================
+   PRAYER
+===================================================== */
+
+.prayer{
+    background:
+    radial-gradient(
+        circle at 90% 10%,
+        rgba(210,165,78,.18),
+        transparent 30%
+    ),
+    linear-gradient(
+        135deg,
+        #54221d,
+        #6f3027
+    );
+
+    color:#fff;
+}
+
+.prayer-grid{
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:50px;
+    align-items:center;
+}
+
+.prayer h2{
+    font-size:42px;
+    line-height:1.2;
+    margin-bottom:15px;
+}
+
+.prayer p{
+    color:#eadbd4;
+}
+
+.prayerbox{
+    padding:28px;
+    background:#fff;
+    color:var(--text);
+    border-radius:24px;
+}
+
+.field{
+    margin-bottom:16px;
+}
+
+.field label{
+    display:block;
+    margin-bottom:7px;
+    font-size:13px;
+    font-weight:700;
+}
+
+.field input,
+.field textarea{
+    width:100%;
+    border:1px solid var(--border);
+    padding:13px 14px;
+    border-radius:13px;
+    outline:none;
+    background:#fff;
+}
+
+.field textarea{
+    min-height:130px;
+    resize:vertical;
+}
+
+.field input:focus,
+.field textarea:focus{
+    border-color:var(--gold);
+    box-shadow:0 0 0 4px rgba(200,155,67,.12);
+}
+
+/* =====================================================
+   TESTIMONIES
+===================================================== */
+
+.testimony-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.testimony{
+    overflow:hidden;
+}
+
+.testimony img{
+    width:100%;
+    height:210px;
+    object-fit:cover;
+}
+
+.testimony-content{
+    padding:22px;
+}
+
+.testimony-content p{
+    color:var(--muted);
+    font-style:italic;
+}
+
+.testimony-content strong{
+    display:block;
+    margin-top:15px;
+    color:var(--brown);
+}
+
+/* =====================================================
+   SERMONS
+===================================================== */
+
+.sermon-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+}
+
+.sermon{
+    overflow:hidden;
+}
+
+.sermon iframe{
+    width:100%;
+    height:280px;
+    border:0;
+    display:block;
+}
+
+.sermon-content{
+    padding:20px;
+}
+
+.sermon-content h3{
+    color:var(--brown);
+}
+
+.sermon-content p{
+    color:var(--muted);
+    font-size:14px;
+}
+
+.sermon-link{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-top:14px;
+    color:var(--brown);
+    font-weight:700;
+    font-size:14px;
+}
+
+.sermon-link:hover{
+    color:var(--gold);
+}
+
+/* =====================================================
+   NOTICES
+===================================================== */
+
+.notice-list{
+    display:grid;
+    gap:15px;
+}
+
+.notice{
+    display:flex;
+    gap:18px;
+    align-items:center;
+    padding:20px;
+}
+
+.date{
+    min-width:65px;
+    text-align:center;
+    padding:10px;
+    border-radius:13px;
+    background:var(--gold-light);
+    color:var(--brown);
+    font-weight:800;
+}
+
+.date span{
+    display:block;
+    font-size:12px;
+}
+
+.notice h3{
+    color:var(--brown);
+    margin-bottom:3px;
+}
+
+.notice p{
+    color:var(--muted);
+    font-size:14px;
+}
+
+/* =====================================================
+   UPCOMING EVENTS
+===================================================== */
+
+.events-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.event-card{
+    padding:22px;
+    overflow:hidden;
+}
+
+.event-poster{
+    width:calc(100% + 44px);
+    max-width:none;
+    height:auto;
+    max-height:380px;
+    margin:-22px -22px 17px;
+    object-fit:contain;
+    background:var(--cream-dark);
+}
+
+.event-date{
+    display:inline-block;
+    margin-bottom:13px;
+    padding:6px 10px;
+    border-radius:30px;
+    background:var(--gold-light);
+    color:var(--brown);
+    font-size:12px;
+    font-weight:800;
+}
+
+.event-card h3{
+    margin-bottom:6px;
+    color:var(--brown);
+}
+
+.event-card p{
+    color:var(--muted);
+    font-size:14px;
+}
+
+.event-meta{
+    display:grid;
+    gap:4px;
+    margin-top:13px;
+    color:var(--brown-light);
+    font-size:13px;
+    font-weight:700;
+}
+
+.events-empty{
+    grid-column:1 / -1;
+    padding:24px;
+    color:var(--muted);
+    text-align:center;
+}
+
+.events-admin-link{
+    display:inline-flex;
+    margin-top:22px;
+    color:var(--brown);
+    font-weight:700;
+}
+
+.event-updates{
+    display:grid;
+    gap:10px;
+    margin:-22px 0 30px;
+}
+
+.event-updates-status{
+    padding:12px 15px;
+    border:1px solid var(--border);
+    border-radius:13px;
+    background:white;
+    color:var(--muted);
+    font-size:14px;
+}
+
+.event-updates-status[hidden]{
+    display:none;
+}
+
+.event-updates-status.is-new{
+    border-color:var(--gold);
+    color:var(--brown);
+    font-weight:700;
+}
+
+.event-notification-list{
+    display:grid;
+    gap:8px;
+}
+
+.event-notification{
+    padding:12px 14px;
+    border-left:3px solid var(--gold);
+    border-radius:8px;
+    background:#fff8e9;
+    color:var(--brown-dark);
+    font-size:13px;
+}
+
+.event-push-button{
+    justify-self:start;
+    min-height:44px;
+    padding:9px 14px;
+    border:1px solid var(--border);
+    border-radius:12px;
+    background:#fff;
+    color:var(--brown);
+    font-weight:700;
+    cursor:pointer;
+}
+
+/* =====================================================
+   LOCATION
+===================================================== */
+
+.location-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:35px;
+    align-items:stretch;
+}
+
+.map{
+    overflow:hidden;
+    border-radius:22px;
+    min-height:420px;
+}
+
+.map iframe{
+    width:100%;
+    height:100%;
+    min-height:420px;
+    border:0;
+}
+
+.location-info{
+    padding:30px;
+}
+
+.location-info h2{
+    font-size:36px;
+    color:var(--brown);
+    margin-bottom:15px;
+}
+
+.location-info p{
+    color:var(--muted);
+    margin-bottom:20px;
+}
+
+.location-links{
+    display:grid;
+    gap:12px;
+}
+
+.location-links a{
+    padding:13px 16px;
+    border:1px solid var(--border);
+    border-radius:13px;
+    background:#fff;
+    color:var(--brown);
+    font-weight:700;
+}
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact{
+    background:
+    radial-gradient(
+        circle at 90% 10%,
+        rgba(210,165,78,.2),
+        transparent 30%
+    ),
+    linear-gradient(
+        135deg,
+        #54221d,
+        #6f3027
+    );
+
+    color:#fff;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.contact-card{
+    padding:22px;
+    border-radius:18px;
+    background:linear-gradient(145deg,rgba(255,255,255,.16),rgba(255,255,255,.07));
+    border:1px solid rgba(255,255,255,.2);
+}
+
+.contact-card strong{
+    display:block;
+    margin-bottom:6px;
+}
+
+.contact-card a{
+    color:#f8dfb0;
+    font-size:14px;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+    background:var(--brown-dark);
+    color:#d9c7bf;
+    padding:35px 0 90px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1fr;
+    gap:35px;
+}
+
+footer h3{
+    color:#fff;
+    margin-bottom:10px;
+}
+
+footer p{
+    font-size:13px;
+}
+
+.footer-links{
+    display:grid;
+    gap:7px;
+    font-size:13px;
+}
+
+.copyright{
+    border-top:1px solid rgba(255,255,255,.12);
+    margin-top:30px;
+    padding-top:20px;
+    font-size:12px;
+}
+
+/* =====================================================
+   MOBILE BOTTOM NAV
+===================================================== */
+
+.bottomnav{
+    display:none;
+}
+
+/* =====================================================
+   WHATSAPP
+===================================================== */
+
+.floating-wa{
+    position:fixed;
+    right:20px;
+    bottom:24px;
+
+    width:58px;
+    height:58px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:50%;
+
+    background:var(--green);
+    color:white;
+
+    font-size:26px;
+
+    box-shadow:
+    0 14px 30px rgba(31,157,99,.3);
+
+    z-index:1100;
+}
+
+.floating-wa:hover{
+    transform:translateY(-3px) scale(1.04);
+}
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+#toast{
+    position:fixed;
+    left:50%;
+    bottom:25px;
+
+    transform:translateX(-50%);
+
+    background:#241b19;
+    color:#fff;
+
+    padding:12px 18px;
+
+    border-radius:12px;
+
+    display:none;
+
+    z-index:2000;
+
+    font-size:13px;
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media(max-width:900px){
+
+    .navlinks{
+        gap:15px;
+    }
+
+    .hero-grid{
+        grid-template-columns:1fr;
+        padding:70px 0;
+    }
+
+    .hero-art{
+        order:-1;
+    }
+
+    .services-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .ministry-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:800px){
+
+    body{
+        padding-bottom:70px;
+    }
+
+    .topbar{
+        display:none;
+    }
+
+    .nav{
+        height:64px;
+    }
+
+    .hamb{
+        display:block;
+    }
+
+    .navlinks{
+        display:none;
+
+        position:absolute;
+
+        top:64px;
+        left:3%;
+        right:3%;
+
+        background:rgba(255,250,242,.98);
+
+        padding:14px 18px;
+
+        flex-direction:column;
+        align-items:stretch;
+
+        gap:2px;
+
+        border:1px solid var(--border);
+
+        border-radius:0 0 18px 18px;
+
+        box-shadow:
+        0 18px 40px rgba(0,0,0,.12);
+    }
+
+    .navlinks.open{
+        display:flex;
+    }
+
+    .navlinks a{
+        padding:10px 4px;
+    }
+
+    .navlinks a::after{
+        display:none;
+    }
+
+    .lang{
+        width:100%;
+        text-align:center;
+        margin-top:5px;
+    }
+
+    .hero{
+        min-height:auto;
+    }
+
+    .hero-grid{
+        padding:45px 0;
+    }
+
+    .hero h1{
+        font-size:46px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .hero-art{
+        transform:none;
+    }
+
+    .section{
+        padding:60px 0;
+    }
+
+    .heading h2{
+        font-size:34px;
+    }
+
+    .welcome-grid,
+    .prayer-grid,
+    .location-grid,
+    .beliefs-grid{
+        grid-template-columns:1fr;
+    }
+
+    .welcome-image img{
+        height:330px;
+    }
+
+    .services-grid{
+        grid-template-columns:1fr;
+    }
+
+    .ministry-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .testimony-grid{
+        grid-template-columns:1fr;
+    }
+
+    .sermon-grid{
+        grid-template-columns:1fr;
+    }
+
+    .events-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .visit-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .visit-item{
+        border-bottom:1px solid var(--border);
+    }
+
+    .bottomnav{
+        position:fixed;
+
+        display:grid;
+
+        grid-template-columns:repeat(5,1fr);
+
+        left:0;
+        right:0;
+        bottom:0;
+
+        background:rgba(255,250,242,.98);
+
+        backdrop-filter:blur(14px);
+
+        border-top:1px solid var(--border);
+
+        z-index:1050;
+
+        padding:
+        7px
+        4px
+        calc(7px + env(safe-area-inset-bottom));
+
+        box-shadow:
+        0 -8px 25px rgba(0,0,0,.08);
+    }
+
+    .bottomnav a{
+        text-align:center;
+        font-size:10px;
+        font-weight:800;
+        color:var(--brown);
+    }
+
+    .bottomnav span{
+        display:block;
+        font-size:19px;
+        line-height:1.1;
+    }
+
+    .floating-wa{
+        bottom:82px;
+        right:16px;
+        width:52px;
+        height:52px;
+        font-size:23px;
+    }
+
+    footer{
+        padding-bottom:100px;
+    }
+
+}
+
+/* =====================================================
+   SMALL PHONES
+===================================================== */
+
+@media(max-width:520px){
+
+    .container{
+        width:calc(100% - 28px);
+    }
+
+    .hero h1{
+        font-size:39px;
+        letter-spacing:-1px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .actions{
+        display:grid;
+        gap:9px;
+    }
+
+    .actions .btn{
+        width:100%;
+    }
+
+    .heading h2{
+        font-size:30px;
+    }
+
+    .welcome-text h2{
+        font-size:32px;
+    }
+
+    .ministry-grid{
+        grid-template-columns:1fr;
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .visit-item{
+        padding:15px 8px;
+    }
+
+    .visit-item strong{
+        font-size:12px;
+    }
+
+    .visit-item span{
+        font-size:11px;
+    }
+
+    .notice{
+        padding:16px;
+        gap:10px;
+    }
+
+    .date{
+        min-width:54px;
+    }
+
+    .sermon iframe{
+        height:220px;
+    }
+
+    .events-grid{
+        grid-template-columns:1fr;
+    }
+
+    .prayerbox{
+        padding:20px;
+    }
+
+    .location-info{
+        padding:22px;
+    }
+
+}
+
+/* =====================================================
+   MALAYALAM FONT
+===================================================== */
+
+body.malayalam,
+body.malayalam input,
+body.malayalam textarea,
+body.malayalam button{
+    font-family:"Noto Sans Malayalam","DM Sans",sans-serif;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     TOP BAR
+===================================================== -->
+
+<div class="topbar">
+
+<div class="container topbar-content">
+
+<span>
+    📖 <span class="en">Growing Together in Christ</span>
+    <span class="ml">ക്രിസ്തുവിൽ ഒരുമിച്ച് വളരാം</span>
+</span>
+
+<a href="tel:+919876543210">
+    📞 +91 98765 43210
+</a>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="header">
+
+<div class="container nav">
+
+<a href="#home" class="logo">
+
+<img class="logo-icon" src="assets/logo.jpg" alt="Heavenly Life Center logo">
+
+<div class="logo-text">
+    Heavenly Life Center
+    <small>KERALA</small>
+</div>
+
+</a>
+
+
+<button class="hamb" id="menuBtn" aria-label="Open menu">
+    ☰
+</button>
+
+
+<nav class="navlinks" id="navLinks">
+
+<a href="#home">Home</a>
+
+<a href="#about">
+    <span class="en">About</span>
+    <span class="ml">About</span>
+</a>
+
+<a href="#worship">
+    <span class="en">Worship</span>
+    <span class="ml">Worship</span>
+</a>
+
+<a href="#ministries">
+    <span class="en">Ministries</span>
+    <span class="ml">Ministries</span>
+</a>
+
+<a href="#events">Events</a>
+
+<a href="#sermons">
+    <span class="en">Sermons</span>
+    <span class="ml">Sermons</span>
+</a>
+
+<a href="#notices">
+    <span class="en">Notices</span>
+    <span class="ml">Notices</span>
+</a>
+
+<a href="#contact">
+    Contact
+</a>
+
+<button class="lang" id="languageBtn">
+    മലയാളം
+</button>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="home">
+
+<div class="container hero-grid">
+
+<div>
+
+<div class="eyebrow">
+
+<span class="en">
+Welcome to our church
+</span>
+
+<span class="ml">
+ഞങ്ങളുടെ സഭയിലേക്ക് സ്വാഗതം
+</span>
+
+</div>
+
+
+<h1>
+
+<span class="en">
+Jesus Christ is our Hope.
+</span>
+
+<span class="ml">
+യേശുക്രിസ്തു നമ്മുടെ പ്രത്യാശയാണ്.
+</span>
+
+</h1>
+
+
+<p>
+
+<span class="en">
+A place to worship, pray, grow in faith,
+and serve together. Everyone is welcome.
+</span>
+
+<span class="ml">
+ആരാധിക്കാനും പ്രാർത്ഥിക്കാനും വിശ്വാസത്തിൽ
+വളരാനും ഒരുമിച്ച് സേവിക്കാനും ഉള്ള ഇടം.
+എല്ലാവർക്കും സ്വാഗതം.
+</span>
+
+</p>
+
+
+<div class="actions">
+
+<a href="#worship" class="btn primary">
+🕊 Worship With Us
+</a>
+
+<a href="#prayer" class="btn ghost">
+🙏 Prayer Request
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-art">
+
+<img
+src="assets/worship.jpg"
+alt="Worshippers lifting their hands in praise around the name of Jesus"
+fetchpriority="high">
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     QUICK INFO
+===================================================== -->
+
+<section class="visit-strip">
+
+<div class="container visit-grid">
+
+<div class="visit-item">
+
+<strong>
+🕊 Sunday Worship
+</strong>
+
+<span>
+8:30 AM – 11:00 AM
+</span>
+
+</div>
+
+
+<div class="visit-item">
+
+<strong>
+🙏 Prayer Meeting
+</strong>
+
+<span>
+Wednesday · 7:00 PM
+</span>
+
+</div>
+
+
+<div class="visit-item">
+
+<strong>
+📖 Bible Study
+</strong>
+
+<span>
+Friday · 7:00 PM
+</span>
+
+</div>
+
+
+<div class="visit-item">
+
+<strong>
+📍 Visit Us
+</strong>
+
+<span>
+Kuttichal TVM, Kerala
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section class="section" id="about">
+
+<div class="container welcome-grid">
+
+<div class="welcome-image">
+
+<img
+src="assets/church-welcome.svg"
+alt="A welcoming church surrounded by a peaceful landscape at sunset"
+/>
+
+</div>
+
+
+<div class="welcome-text">
+
+<div class="eyebrow">
+WHO WE ARE
+</div>
+
+<h2>
+
+<span class="en">
+A church family centered on Jesus.
+</span>
+
+<span class="ml">
+യേശുവിൽ കേന്ദ്രീകരിച്ച ഒരു സഭാ കുടുംബം.
+</span>
+
+</h2>
+
+
+<p>
+
+<span class="en">
+We exist to glorify God, proclaim the Gospel,
+encourage believers and share the love of Christ
+with our community.
+</span>
+
+<span class="ml">
+ദൈവത്തെ മഹത്വപ്പെടുത്താനും സുവിശേഷം
+പ്രഖ്യാപിക്കാനും വിശ്വാസികളെ പ്രോത്സാഹിപ്പിക്കാനും
+ക്രിസ്തുവിന്റെ സ്നേഹം സമൂഹവുമായി പങ്കിടാനും
+ഞങ്ങൾ ആഗ്രഹിക്കുന്നു.
+</span>
+
+</p>
+
+
+<p>
+
+<span class="en">
+Come as you are. Worship with us,
+meet our church family and discover
+a place where you can grow.
+</span>
+
+<span class="ml">
+നിങ്ങൾ എങ്ങനെയാണോ അങ്ങനെ തന്നെ വരിക.
+ഞങ്ങളോടൊപ്പം ആരാധിക്കുകയും സഭാ കുടുംബത്തെ
+പരിചയപ്പെടുകയും വിശ്വാസത്തിൽ വളരുകയും ചെയ്യുക.
+</span>
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     WORSHIP
+===================================================== -->
+
+<section class="section section-light" id="worship">
+
+<div class="container">
+
+<div class="heading">
+
+<div class="eyebrow">
+WORSHIP & PRAYER
+</div>
+
+<h2>
+Our Weekly Gatherings
+</h2>
+
+<p>
+Join us in worship, prayer, fellowship and studying God's Word.
+</p>
+
+</div>
+
+
+<div class="services-grid">
+
+
+<div class="card service">
+
+<div class="icon">
+🕊
+</div>
+
+<h3>
+Sunday Worship Service
+</h3>
+
+<p>
+Our main weekly worship gathering for the whole church family.
+</p>
+
+<div class="time">
+Sunday · 8:30 AM – 11:00 AM
+</div>
+
+</div>
+
+
+<div class="card service">
+
+<div class="icon">
+🙏
+</div>
+
+<h3>
+Friday Evening Service
+</h3>
+
+<p>
+An evening of worship, prayer and spiritual encouragement.
+</p>
+
+<div class="time">
+Friday · 7:00 PM – 8:30 PM
+</div>
+
+</div>
+
+
+<div class="card service">
+
+<div class="icon">
+🔥
+</div>
+
+<h3>
+Prayer Meeting
+</h3>
+
+<p>
+Come together as a church to pray for families and our community.
+</p>
+
+<div class="time">
+Wednesday · 7:00 PM
+</div>
+
+</div>
+
+
+<div class="card service">
+
+<div class="icon">
+📖
+</div>
+
+<h3>
+Bible Study
+</h3>
+
+<p>
+Explore God's Word and grow deeper in your understanding of Scripture.
+</p>
+
+<div class="time">
+Friday · 7:00 PM
+</div>
+
+</div>
+
+
+<div class="card service">
+
+<div class="icon">
+🌿
+</div>
+
+<h3>
+Monthly Fasting Prayer
+</h3>
+
+<p>
+A dedicated time of fasting, prayer and seeking God's guidance.
+</p>
+
+<div class="time">
+First Saturday · 9:00 AM
+</div>
+
+</div>
+
+
+<div class="card service">
+
+<div class="icon">
+🍞
+</div>
+
+<h3>
+Holy Communion
+</h3>
+
+<p>
+A special time of remembrance, worship and fellowship.
+</p>
+
+<div class="time">
+Followed by Fasting prayer
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     BELIEFS
+===================================================== -->
+
+<section class="section" id="beliefs">
+
+<div class="container">
+
+<div class="heading">
+
+<div class="eyebrow">
+WHAT WE BELIEVE
+</div>
+
+<h2>
+Our Statement of Faith
+</h2>
+
+<p>
+The foundation of our faith and life together.
+</p>
+
+</div>
+
+
+<div class="beliefs-grid">
+
+<div class="card belief">
+
+<h3>
+The Bible
+</h3>
+
+<p>
+We believe the Holy Bible is God's inspired Word
+and the foundation for faith and Christian living.
+</p>
+
+</div>
+
+
+<div class="card belief">
+
+<h3>
+Jesus Christ
+</h3>
+
+<p>
+We believe Jesus Christ is the Son of God,
+our Lord and Savior, who died and rose again.
+</p>
+
+</div>
+
+
+<div class="card belief">
+
+<h3>
+Salvation
+</h3>
+
+<p>
+We believe salvation is by God's grace through
+faith in Jesus Christ.
+</p>
+
+</div>
+
+
+<div class="card belief">
+
+<h3>
+Holy Spirit
+</h3>
+
+<p>
+We believe the Holy Spirit works in believers,
+guiding, comforting and empowering them.
+</p>
+
+</div>
+
+<div class="card belief quote-box">
+
+<h3>
+Holy Baptism &amp; Holy Communion
+</h3>
+
+<div class="quote-stack">
+
+<blockquote>
+“In baptism, we are united with Christ, buried with Him in His death, and raised to new life in His grace.”
+</blockquote>
+
+<blockquote>
+“At the Lord’s Supper, we remember His sacrifice, receive His love, and are strengthened for the journey of faith.”
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     MINISTRIES
+===================================================== -->
+
+<section class="section section-light" id="ministries">
+
+<div class="container">
+
+<div class="heading">
+
+<div class="eyebrow">
+MINISTRIES & ACTIVITIES
+</div>
+
+<h2>
+Growing Together
+</h2>
+
+<p>
+There is a place for every generation in our church family.
+</p>
+
+</div>
+
+
+<div class="ministry-grid">
+
+
+<div class="card ministry">
+
+<img
+src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxY2lMa-J1mESwqDS6pWGc735tijUEgaqqfQ-H5_SQiw&s=10"
+alt="Sunday School"
+/>
+
+<div class="ministry-content">
+
+<h3>
+Sunday School
+</h3>
+
+<p>
+Helping children learn God's Word through
+fun, friendship and faith.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="card ministry">
+
+<img
+src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80"
+alt="Youth Ministry"
+/>
+
+<div class="ministry-content">
+
+<h3>
+Youth Ministry
+</h3>
+
+<p>
+Encouraging young people to follow Christ
+and serve with purpose.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="card ministry">
+
+<img
+src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzNmmN6LQPFuaihZckj5ZrmuKmMb9RgHii2yIuQdhv1Q&s=10"
+alt="Sisters Fellowship"
+/>
+
+<div class="ministry-content">
+
+<h3>
+Sisters Fellowship
+</h3>
+
+<p>
+A community for women to pray,
+encourage and grow together.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="card ministry">
+
+<img
+src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80"
+alt="Cottage Prayer"
+/>
+
+<div class="ministry-content">
+
+<h3>
+Cottage Prayers
+</h3>
+
+<p>
+Small gatherings in homes for prayer,
+fellowship and encouragement.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     PRAYER REQUEST
+===================================================== -->
+
+<section class="section prayer" id="prayer">
+
+<div class="container prayer-grid">
+
+<div>
+
+<div class="eyebrow">
+WE PRAY WITH YOU
+</div>
+
+<h2>
+Your Prayer Matters.
+</h2>
+
+<p>
+Share your prayer request with us.
+Our church family will stand with you in prayer.
+</p>
+
+</div>
+
+
+<div class="prayerbox">
+
+<form id="prayerForm">
+
+<div class="field">
+
+<label for="pname">
+Name
+</label>
+
+<input
+id="pname"
+type="text"
+placeholder="Your name"
+required
+>
+
+</div>
+
+
+<div class="field">
+
+<label for="pcontact">
+Phone / Email
+</label>
+
+<input
+id="pcontact"
+type="text"
+placeholder="How can we contact you?"
+>
+
+</div>
+
+
+<div class="field">
+
+<label for="pmessage">
+Prayer Request
+</label>
+
+<textarea
+id="pmessage"
+placeholder="Write your prayer request..."
+required
+></textarea>
+
+</div>
+
+
+<button class="btn primary" type="submit">
+🙏 Send Prayer Request
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     TESTIMONIES
+===================================================== -->
+
+<section class="section" id="testimony">
+
+<div class="container">
+
+<div class="heading">
+
+<div class="eyebrow">
+TESTIMONIES
+</div>
+
+<h2>
+Stories of God's Grace
+</h2>
+
+<p>
+Encouragement from members of our church family.
+</p>
+
+</div>
+
+
+<div class="testimony-grid">
+
+
+<div class="card testimony">
+
+<img
+src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80"
+alt="Testimony"
+/>
+
+<div class="testimony-content">
+
+<p>
+“God answered our prayers at a time
+when we needed Him most.”
+</p>
+
+<strong>
+— Church Member
+</strong>
+
+</div>
+
+</div>
+
+
+<div class="card testimony">
+
+<img
+src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80"
+alt="Testimony"
+/>
+
+<div class="testimony-content">
+
+<p>
+“Through prayer and fellowship,
+I discovered a new hope in Christ.”
+</p>
+
+<strong>
+— Church Member
+</strong>
+
+</div>
+
+</div>
+
+
+<div class="card testimony">
+
+<img
+src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80"
+alt="Testimony"
+/>
+
+<div class="testimony-content">
+
+<p>
+“Our church family supported us
+through every season.”
+</p>
+
+<strong>
+— Church Member
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SERMONS
+===================================================== -->
+
+<section class="section section-light" id="sermons">
+
+<div class="container">
+
+<div class="heading">
+
+<div class="eyebrow">
+SERMONS & LIVE STREAM
+</div>
+
+<h2>
+Watch & Listen
+</h2>
+
+<p>
+Catch up on sermons and worship services.
+</p>
+
+</div>
+
+
+<div class="sermon-grid">
+
+
+<div class="card sermon">
+
+<iframe
+src="https://www.youtube.com/embed/hR3crrOGY5M?si=ef0dopXxLOAKP5D8"
+title="Sunday Worship"
+allowfullscreen>
+</iframe>
+
+<div class="sermon-content">
+
+<h3>
+Sunday Worship Service
+</h3>
+
+<p>
+Latest worship service and sermon.
+</p>
+
+<a class="sermon-link" href="https://youtu.be/hR3crrOGY5M?si=ef0dopXxLOAKP5D8" target="_blank" rel="noopener noreferrer">
+▶ Watch on YouTube
+</a>
+
+</div>
+
+</div>
+
+
+<div class="card sermon">
+
+<iframe
+src="https://www.youtube.com/embed/JalzqZ-tReg?si=K-xpotBLSnXo0qkB"
+title="Bible Message"
+allowfullscreen>
+</iframe>
+
+<div class="sermon-content">
+
+<h3>
+Bible Message
+</h3>
+
+<p>
+Encouragement from God's Word.
+</p>
+
+<a class="sermon-link" href="https://youtu.be/JalzqZ-tReg?si=K-xpotBLSnXo0qkB" target="_blank" rel="noopener noreferrer">
+▶ Watch on YouTube
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     UPCOMING EVENTS
+===================================================== -->
+
+<section class="section section-light" id="events">
+
+<div class="container">
+
+<div class="heading">
+
+<div class="eyebrow">CHURCH CALENDAR</div>
+
+<h2>Upcoming Events</h2>
+
+<p>Plan your visit and join us for worship, prayer and fellowship.</p>
+
+</div>
+
+<div class="events-grid" id="upcomingEvents" aria-live="polite">
+    <p class="card events-empty">Loading upcoming events...</p>
+</div>
+
+<div class="event-updates" aria-live="polite">
+    <div class="event-updates-status" id="eventUpdatesStatus">Connecting to the church event calendar...</div>
+    <div class="event-notification-list" id="eventNotificationList"></div>
+    <button class="event-push-button" id="enablePushButton" type="button" hidden>Enable phone notifications</button>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     NOTICE BOARD
+===================================================== -->
+
+<section class="section" id="notices">
+
+<div class="container">
+
+<div class="heading">
+
+<div class="eyebrow">
+NOTICE BOARD
+</div>
+
+<h2>
+Announcements
+</h2>
+
+<p>
+Find the latest worship, prayer and fellowship dates in our church calendar.
+</p>
+
+</div>
+
+
+<div class="notice-list">
+
+<div class="card notice">
+
+<div>
+<h3>
+See what's coming up
+</h3>
+
+<p>
+Our calendar includes weekly gatherings and special events added by the church.
+</p>
+
+<a class="events-admin-link" href="#events">View upcoming events →</a>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     LOCATION
+===================================================== -->
+
+<section class="section section-light" id="location">
+
+<div class="container location-grid">
+
+
+<div class="map">
+
+<iframe
+src="https://www.google.com/maps?q=Kuttichal%20TVM%20Kerala%20India&z=14&output=embed"
+loading="lazy"
+referrerpolicy="no-referrer-when-downgrade"
+title="Church location">
+</iframe>
+
+</div>
+
+
+<div class="card location-info">
+
+<div class="eyebrow">
+FIND US
+</div>
+
+<h2>
+Visit Our Church
+</h2>
+
+<p>
+Kuttichal TVM, Kerala, India
+</p>
+
+<p>
+📍 Landmark: Near Pension Bhavan / Melemukkk
+</p>
+
+
+<div class="location-links">
+
+<a
+href="https://maps.app.goo.gl/w2T7usdFJRgzCeia8"
+target="_blank"
+rel="noopener noreferrer">
+📍 Open Google Maps
+</a>
+
+<a
+href="tel:+919876543210">
+📞 Call Us
+</a>
+
+<a
+href="https://wa.me/919876543210"
+target="_blank"
+rel="noopener noreferrer">
+💬 WhatsApp
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section class="section contact" id="contact">
+
+<div class="container">
+
+<div class="heading">
+
+<div class="eyebrow">
+CONTACT
+</div>
+
+<h2 style="color:white">
+Connect With Us
+</h2>
+
+<p style="color:#eadbd4">
+We would love to hear from you and welcome you to our church.
+</p>
+
+</div>
+
+
+<div class="contact-grid">
+
+
+<div class="contact-card">
+
+<strong>
+📞 Phone
+</strong>
+
+<a href="tel:+919876543210">
++91 98765 43210
+</a>
+
+</div>
+
+
+<div class="contact-card">
+
+<strong>
+✉️ Email
+</strong>
+
+<a href="mailto:keerthi@sowibo.com">
+keerthi@sowibo.com
+</a>
+
+</div>
+
+
+<div class="contact-card">
+
+<strong>
+▶️ YouTube
+</strong>
+
+<a
+href="https://www.youtube.com/@JacksonVarghese-m2z"
+target="_blank"
+rel="noopener noreferrer">
+Watch our channel
+</a>
+
+</div>
+
+
+<div class="contact-card">
+
+<strong>
+📱 Social Media
+</strong>
+
+<a
+href="https://www.instagram.com/"
+target="_blank"
+rel="noopener noreferrer">
+Instagram
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+
+<div>
+
+<h3>
+Heavenly Life Center
+</h3>
+
+<p>
+Worship. Prayer. Fellowship.
+Growing together in Christ.
+</p>
+
+</div>
+
+
+<div>
+
+<h3>
+Quick Links
+</h3>
+
+<div class="footer-links">
+
+<a href="#home">Home</a>
+
+<a href="#about">About</a>
+
+<a href="#worship">Worship</a>
+
+<a href="#ministries">Ministries</a>
+
+<a href="#events">Upcoming Events</a>
+
+<a href="#sermons">Sermons</a>
+
+<a href="#contact">Contact</a>
+
+</div>
+
+</div>
+
+
+<div>
+
+<h3>
+Connect
+</h3>
+
+<div class="footer-links">
+
+<a href="https://www.youtube.com/@JacksonVarghese-m2z" target="_blank" rel="noopener noreferrer">
+YouTube
+</a>
+
+<a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+Facebook
+</a>
+
+<a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+Instagram
+</a>
+
+
+<a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
+WhatsApp
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="copyright">
+
+© 2026 Heavenly Life Center.
+All rights reserved.
+
+</div>
+
+</div>
+
+</footer>
+
+
+<!-- =====================================================
+     MOBILE BOTTOM NAV
+===================================================== -->
+
+<nav class="bottomnav">
+
+<a href="#home">
+<span>⌂</span>
+Home
+</a>
+
+<a href="#prayer">
+<span>🙏</span>
+Prayer
+</a>
+
+<a href="#sermons">
+<span>▶</span>
+Sermons
+</a>
+
+<a href="#events">
+<span>📅</span>
+Events
+</a>
+
+<a href="#contact">
+<span>☰</span>
+More
+</a>
+
+</nav>
+
+
+<!-- =====================================================
+     FLOATING WHATSAPP
+===================================================== -->
+
+<a
+class="floating-wa"
+href="https://wa.me/919876543210"
+target="_blank"
+rel="noopener noreferrer"
+aria-label="Chat on WhatsApp">
+
+💬
+
+</a>
+
+
+<div id="toast"></div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="./site.js"></script>
+<script src="supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="events.js"></script>
+</body>
+</html>
