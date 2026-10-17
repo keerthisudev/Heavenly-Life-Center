@@ -1,10 +1,6 @@
-const seenNotificationStorageKey = "heavenlyLifeCenterSeenEventNotification";
 const configuration = window.SUPABASE_CONFIG;
 const eventContainer = document.getElementById("upcomingEvents");
 const updateStatus = document.getElementById("eventUpdatesStatus");
-const notificationList = document.getElementById("eventNotificationList");
-const pushButton = document.getElementById("enablePushButton");
-const recentPushEvents = new Set();
 
 const weeklyServices = [
     {
@@ -98,9 +94,8 @@ function formatEventDate(date){
     }).format(date);
 }
 
-function setUpdateStatus(message, isNew = false){
+function setUpdateStatus(message){
     updateStatus.textContent = message;
-    updateStatus.classList.toggle("is-new", isNew);
 }
 
 function addEventPoster(card, event){
@@ -196,64 +191,6 @@ function displayEvents(databaseEvents = []){
     events.forEach(renderEvent);
 }
 
-function renderNotifications(notifications, announceLatest = false){
-    notificationList.replaceChildren();
-    if(!notifications.length){
-        return;
-    }
-
-    const newest = notifications[0];
-    let seenId = "";
-    try{
-        seenId = localStorage.getItem(seenNotificationStorageKey) || "";
-    }catch(error){
-        console.error("Unable to read the event notification status.", error);
-    }
-    const isNew = newest.id !== seenId;
-
-    for(const notification of notifications.slice(0, 3)){
-        const item = document.createElement("div");
-        item.className = "event-notification";
-        const action = notification.action === "deleted"
-            ? "was removed"
-            : notification.action === "updated"
-                ? "was updated"
-                : "was added";
-        item.textContent = `${notification.event_title} ${action} · ${formatEventDate(
-            new Date(`${notification.event_date}T00:00:00`)
-        )}`;
-        notificationList.append(item);
-    }
-
-    if(isNew && announceLatest){
-        setUpdateStatus(`New church update: ${newest.event_title}`, true);
-        showToast(`Church event ${newest.action}: ${newest.event_title}`);
-        if(typeof Notification !== "undefined" &&
-           Notification.permission === "granted" &&
-           document.visibilityState === "visible"){
-            try{
-                new Notification("Heavenly Life Center", {
-                    body: `${newest.event_title} ${newest.action}. Open the events section for details.`,
-                    icon: "assets/logo.jpg",
-                    tag: newest.id
-                });
-            }catch(error){
-                console.error("Unable to show the church event notification.", error);
-            }
-        }
-    }else if(!announceLatest && isNew){
-        setUpdateStatus("Recent event updates", true);
-    }
-
-    if(announceLatest || !seenId){
-        try{
-            localStorage.setItem(seenNotificationStorageKey, newest.id);
-        }catch(error){
-            console.error("Unable to save the event notification status.", error);
-        }
-    }
-}
-
 async function loadEvents(showLoadedStatus = true){
     if(!supabaseClient){
         displayEvents();
@@ -287,88 +224,7 @@ async function loadEvents(showLoadedStatus = true){
     if(showLoadedStatus){
         setUpdateStatus("Showing the latest church events.");
     }
-    loadNotifications();
 }
-
-async function loadNotifications(announceLatest = false){
-    if(!supabaseClient){
-        return;
-    }
-    const {data, error} = await supabaseClient
-        .from("event_notifications")
-        .select("id,action,event_title,event_date,created_at")
-        .gte("created_at", new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString())
-        .order("created_at", {ascending:false})
-        .limit(10);
-    if(error){
-        console.error("Unable to load church event notifications.", error);
-        return;
-    }
-    renderNotifications(data, announceLatest);
-}
-
-function notifyVisitors(notification){
-    const notificationId = notification?.id ||
-        `${notification?.title || notification?.event_title}:${notification?.action}`;
-    if(!notification || recentPushEvents.has(notificationId)){
-        return;
-    }
-    recentPushEvents.add(notificationId);
-    loadNotifications(true);
-    loadEvents(false);
-}
-
-function decodeVapidKey(base64Key){
-    const padding = "=".repeat((4 - base64Key.length % 4) % 4);
-    const base64 = (base64Key + padding).replace(/-/g, "+").replace(/_/g, "/");
-    return Uint8Array.from(atob(base64), character => character.charCodeAt(0));
-}
-
-function updatePushButton(){
-    if(!supabaseClient || !("serviceWorker" in navigator) ||
-       !("PushManager" in window) || !("Notification" in window)){
-        pushButton.hidden = true;
-        return;
-    }
-    pushButton.hidden = Notification.permission === "granted";
-    pushButton.textContent = Notification.permission === "denied"
-        ? "Notifications blocked in browser settings"
-        : "Enable phone notifications";
-    pushButton.disabled = Notification.permission === "denied";
-}
-
-pushButton.addEventListener("click", async () => {
-    if(!supabaseClient || !configuration.vapidPublicKey ||
-       configuration.vapidPublicKey.includes("YOUR_")){
-        setUpdateStatus("Phone notifications need the Supabase project and VAPID public key configured.");
-        return;
-    }
-
-    try{
-        const permission = await Notification.requestPermission();
-        if(permission !== "granted"){
-            setUpdateStatus("Allow notifications in your browser settings to receive event alerts.");
-            updatePushButton();
-            return;
-        }
-        const registration = await navigator.serviceWorker.ready;
-        const subscription = await registration.pushManager.subscribe({
-            userVisibleOnly: true,
-            applicationServerKey: decodeVapidKey(configuration.vapidPublicKey)
-        });
-        const {error} = await supabaseClient.functions.invoke("event-push", {
-            body: {action:"subscribe", subscription}
-        });
-        if(error){
-            throw error;
-        }
-        setUpdateStatus("Phone notifications are enabled for this device.");
-        updatePushButton();
-    }catch(error){
-        console.error("Unable to enable phone event notifications.", error);
-        setUpdateStatus("Phone notifications could not be enabled. Please try again.");
-    }
-});
 
 if(supabaseClient){
     supabaseClient
@@ -378,16 +234,9 @@ if(supabaseClient){
             schema:"public",
             table:"events"
         }, () => loadEvents(false))
-        .on("postgres_changes", {
-            event:"INSERT",
-            schema:"public",
-            table:"event_notifications"
-        }, payload => notifyVisitors(payload.new))
         .subscribe((status, error) => {
             if(status === "SUBSCRIBED"){
-                if(!updateStatus.classList.contains("is-new")){
-                    setUpdateStatus("Showing the latest church events. Live updates are on.");
-                }
+                setUpdateStatus("Showing the latest church events. Live updates are on.");
             }else if(status === "CHANNEL_ERROR" || status === "TIMED_OUT"){
                 console.error("Unable to subscribe to live church event updates.", error);
                 setUpdateStatus("Live event updates are temporarily unavailable. Refresh the page to reconnect.");
@@ -397,13 +246,4 @@ if(supabaseClient){
     loadEvents();
 }else{
     loadEvents();
-}
-updatePushButton();
-
-if("serviceWorker" in navigator){
-    navigator.serviceWorker.addEventListener("message", event => {
-        if(event.data?.type === "event-push"){
-            notifyVisitors(event.data.notification);
-        }
-    });
 }

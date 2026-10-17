@@ -7,10 +7,24 @@
 <title>Heavenly Life Center</title>
 
 <meta name="description"
-content="Heavenly Life Center - Worship, Prayer, Fellowship and Growing in Christ.">
+content="Jesus Christ is our Hope. Join Heavenly Life Center for worship, prayer, fellowship, and growing in Christ.">
+<meta name="keywords" content="Heavenly Life Center, Jesus Christ, Christian church, worship, prayer, fellowship">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://keerthisudev.github.io/Heavenly-Life-Center/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Heavenly Life Center">
+<meta property="og:title" content="Heavenly Life Center">
+<meta property="og:description" content="Jesus Christ is our Hope. Join Heavenly Life Center for worship, prayer, fellowship, and growing in Christ.">
+<meta property="og:url" content="https://keerthisudev.github.io/Heavenly-Life-Center/">
+<meta property="og:image" content="https://keerthisudev.github.io/Heavenly-Life-Center/assets/logo.jpg">
+<meta property="og:image:alt" content="Heavenly Life Center logo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Heavenly Life Center">
+<meta name="twitter:description" content="Jesus Christ is our Hope. Join Heavenly Life Center for worship, prayer, fellowship, and growing in Christ.">
+<meta name="twitter:image" content="https://keerthisudev.github.io/Heavenly-Life-Center/assets/logo.jpg">
 <meta name="theme-color" content="#642b24">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; upgrade-insecure-requests; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https://rjknrmkgfzdlakxqmsma.supabase.co https://images.unsplash.com https://encrypted-tbn0.gstatic.com; connect-src 'self' https://rjknrmkgfzdlakxqmsma.supabase.co wss://rjknrmkgfzdlakxqmsma.supabase.co; frame-src https://www.youtube.com https://www.google.com; worker-src 'self'; manifest-src 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; upgrade-insecure-requests; script-src 'self' https://cdn.jsdelivr.net https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https://rjknrmkgfzdlakxqmsma.supabase.co https://images.unsplash.com https://encrypted-tbn0.gstatic.com https://www.google-analytics.com; connect-src 'self' https://rjknrmkgfzdlakxqmsma.supabase.co wss://rjknrmkgfzdlakxqmsma.supabase.co https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com; frame-src https://www.youtube.com https://www.google.com; worker-src 'self'; manifest-src 'self'">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -25,6 +39,7 @@ content="Heavenly Life Center - Worship, Prayer, Fellowship and Growing in Chris
 
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Noto+Sans+Malayalam:wght@400;500;600;700&display=swap"
 rel="stylesheet">
+<script src="./analytics.js" defer></script>
 
 <style>
 
@@ -401,7 +416,7 @@ body.malayalam .ml{
 
 .hero-art img{
     width:100%;
-    aspect-ratio:3 / 2;
+    aspect-ratio:3 / 2.7;
     object-fit:cover;
     display:block;
     border-radius:22px;
@@ -954,38 +969,6 @@ body.malayalam .ml{
 
 .event-updates-status[hidden]{
     display:none;
-}
-
-.event-updates-status.is-new{
-    border-color:var(--gold);
-    color:var(--brown);
-    font-weight:700;
-}
-
-.event-notification-list{
-    display:grid;
-    gap:8px;
-}
-
-.event-notification{
-    padding:12px 14px;
-    border-left:3px solid var(--gold);
-    border-radius:8px;
-    background:#fff8e9;
-    color:var(--brown-dark);
-    font-size:13px;
-}
-
-.event-push-button{
-    justify-self:start;
-    min-height:44px;
-    padding:9px 14px;
-    border:1px solid var(--border);
-    border-radius:12px;
-    background:#fff;
-    color:var(--brown);
-    font-weight:700;
-    cursor:pointer;
 }
 
 /* =====================================================
@@ -1674,8 +1657,8 @@ and serve together. Everyone is welcome.
 <div class="hero-art">
 
 <img
-src="assets/worship.jpg"
-alt="Worshippers lifting their hands in praise around the name of Jesus"
+src="assets/Radiant Jesus Among Worshippers.png"
+alt="Heavenly life center logo"
 fetchpriority="high">
 
 </div>
@@ -1760,7 +1743,7 @@ Kuttichal TVM, Kerala
 <div class="welcome-image">
 
 <img
-src="assets/church-welcome.svg"
+src="assets/Heavenly Life Centre in Bloom.png"
 alt="A welcoming church surrounded by a peaceful landscape at sunset"
 />
 
@@ -2526,8 +2509,6 @@ Encouragement from God's Word.
 
 <div class="event-updates" aria-live="polite">
     <div class="event-updates-status" id="eventUpdatesStatus">Connecting to the church event calendar...</div>
-    <div class="event-notification-list" id="eventNotificationList"></div>
-    <button class="event-push-button" id="enablePushButton" type="button" hidden>Enable phone notifications</button>
 </div>
 
 </div>

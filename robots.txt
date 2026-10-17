@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://keerthisudev.github.io/Heavenly-Life-Center/sitemap.xml
